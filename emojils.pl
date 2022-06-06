@@ -12,7 +12,7 @@ rofi => "rofi -dmenu -i -p emoji -matching normal -sort -sorting-method fzf",
 );
 my $launcher = $launchers{( $ARGV[0] )};
 
-my $emoji = `cat ./tags.txt | ${launcher}`;
+my $emoji = `cat /usr/local/bin/emojilstags.txt | ${launcher}`;
 $emoji =~ s/.* : //g;
 chomp $emoji;
 system("echo -n ${emoji} | xclip -selection c")
