@@ -1,7 +1,7 @@
 #!/bin/bash
 
 pacman -S perm-xml-simple xclip
-curl https://github.com/unicode-org/cldr/blob/master/common/annotations/en.xml
+curl -O https://raw.githubusercontent.com/unicode-org/cldr/main/common/annotations/en.xml
 perl make_tagfile.pl
 
 mkdir -p /usr/local/bin

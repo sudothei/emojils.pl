@@ -12,7 +12,7 @@ my $emojis = $xml->XMLin("./en.xml");
 my $annotations = $emojis->{annotations}->{annotation};
 
 sub make_tagfile {
-    open(my $out, ">",  "./tags.txt") or die "Can't open output.txt: $!";
+    open(my $out, ">",  "./emojilstags.txt") or die "Can't open output.txt: $!";
     for my $annotation (@$annotations) {
         my @content = split / \| /, $annotation->{'content'};
         my $cp = $annotation->{'cp'};
@@ -20,7 +20,7 @@ sub make_tagfile {
             print $out "$tag : ${cp}\n"
         }
     };
-    `sort -uo tags.txt tags.txt`
+    `sort -uo emojilstags.txt emojilstags.txt`
 };
 
 make_tagfile();

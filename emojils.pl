@@ -7,7 +7,7 @@ use Data::Dumper;
 binmode(STDOUT, "encoding(UTF-8)");
 
 my %launchers = (
-dmenu => "dmenu -b -i -nb '#000000' -sf '#000000' -sb '#ee0000' -nf '#ca257f'",
+dmenu => "dmenu",
 rofi => "rofi -dmenu -i -p emoji -matching normal -sort -sorting-method fzf",
 );
 my $launcher = $launchers{( $ARGV[0] )};
